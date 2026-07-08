@@ -1,1 +1,1 @@
-Open START-HERE.html or index.html. The 404.html file is only for missing-page errors. Upload all files to public_html for hosting.
+Tom Carter Drain & Plumbing static website. Upload all files/folders to Vercel, Netlify, cPanel, or any static host. Open index.html for local preview.

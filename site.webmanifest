@@ -1,0 +1,11 @@
+{
+  "name": "Tom Carter Drain & Plumbing",
+  "short_name": "Tom Carter Plumbing",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1f3c",
+  "theme_color": "#0d1f3c",
+  "icons": [
+    {"src": "/assets/images/favicon.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
