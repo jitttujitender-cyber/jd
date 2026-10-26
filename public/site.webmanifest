@@ -1,0 +1,16 @@
+{
+  "name": "Tom Carter Drain & Plumbing",
+  "short_name": "Tom Carter Plumbing",
+  "description": "Plumbing and drain service based in Chadron, Nebraska.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#0d1f3c",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
