@@ -173,7 +173,7 @@ export const CITIES: City[] = [
       { question: "What should I check when a Mitchell water heater stops keeping up?", answer: "Note whether the problem affects every fixture, look for visible leaks, and check whether the unit has power or fuel. Avoid opening sealed components; a service visit can determine whether repair or replacement is appropriate." },
       { question: "Do you service homes outside the Mitchell town center?", answer: "We cover Mitchell and surrounding northwest Nebraska communities. Share your exact location when calling so we can confirm access and the service window." },
     ],
-    metaFocus: "Mitchell homeowners can get property-specific help with leaks, fixtures, and water heaters",
+    metaFocus: "Water conditions vary by property",
   },
   {
     slug: "crawford",

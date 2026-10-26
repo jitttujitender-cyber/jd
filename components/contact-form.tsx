@@ -25,12 +25,12 @@ export function ContactForm() {
         <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5" role="status" aria-live="polite">
           <CheckCircle2 className="h-6 w-6 text-emerald-700" aria-hidden="true" />
           <h3 className="mt-3 font-heading text-lg font-bold text-emerald-950">Thanks for preparing a request.</h3>
-          <p className="mt-2 text-sm leading-6 text-emerald-900">This preview form is not connected to a message service, so your information has not been sent. Call <a className="font-bold underline" href={BUSINESS.phoneLink}>{BUSINESS.phone}</a> to reach the team.</p>
+          <p className="mt-2 text-sm leading-6 text-emerald-900">This front-end form is not connected to a message service, so your information has not been sent. Call <a className="font-bold underline" href={BUSINESS.phoneLink}>{BUSINESS.phone}</a> to reach the team.</p>
           <button className="mt-4 text-sm font-bold text-emerald-900 underline underline-offset-4" onClick={() => setSubmitted(false)} type="button">Prepare another request</button>
         </div>
       ) : (
         <>
-          <p className="mb-5 rounded-xl bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-950">This client-side demo does not transmit form submissions. Please call {BUSINESS.phone} for a real service request.</p>
+          <p className="mb-5 rounded-xl bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-950">This form is not connected to a message service and does not transmit submissions. Please call {BUSINESS.phone} for a service request.</p>
           <form className="grid gap-4" onSubmit={handleSubmit}>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="grid gap-1.5 text-sm font-semibold text-slate-700" htmlFor="full-name">
@@ -39,7 +39,7 @@ export function ContactForm() {
               </label>
               <label className="grid gap-1.5 text-sm font-semibold text-slate-700" htmlFor="phone">
                 Phone <span className="sr-only">required</span>
-                <input autoComplete="tel" className="min-h-11 rounded-lg border border-slate-300 bg-white px-3 text-sm font-normal outline-none transition placeholder:text-slate-400 focus:border-blue focus:ring-2 focus:ring-blue/15" id="phone" name="phone" placeholder="(402) 555-0123" required type="tel" />
+                <input autoComplete="tel" className="min-h-11 rounded-lg border border-slate-300 bg-white px-3 text-sm font-normal outline-none transition placeholder:text-slate-400 focus:border-blue focus:ring-2 focus:ring-blue/15" id="phone" name="phone" placeholder="Your best callback number" required type="tel" />
               </label>
             </div>
             <label className="grid gap-1.5 text-sm font-semibold text-slate-700" htmlFor="email">

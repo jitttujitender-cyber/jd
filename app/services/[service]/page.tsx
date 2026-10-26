@@ -15,8 +15,11 @@ export function generateStaticParams() {
   return SERVICES.map((service) => ({ service: service.slug }));
 }
 
-export function generateMetadata({ params }: { params: { service: string } }): Metadata {
-  const service = getService(params.service);
+type ServicePageProps = { params: Promise<{ service: string }> };
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const { service: serviceSlug } = await params;
+  const service = getService(serviceSlug);
   if (!service) {
     return {
       title: "Service not found",
@@ -33,8 +36,9 @@ export function generateMetadata({ params }: { params: { service: string } }): M
   });
 }
 
-export default function ServiceDetailPage({ params }: { params: { service: string } }) {
-  const service = getService(params.service);
+export default async function ServiceDetailPage({ params }: ServicePageProps) {
+  const { service: serviceSlug } = await params;
+  const service = getService(serviceSlug);
   if (!service) notFound();
 
   const relatedServices = service.related

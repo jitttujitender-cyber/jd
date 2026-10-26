@@ -15,8 +15,11 @@ export function generateStaticParams() {
   return CITIES.map((city) => ({ city: city.slug }));
 }
 
-export function generateMetadata({ params }: { params: { city: string } }): Metadata {
-  const city = getCity(params.city);
+type CityPageProps = { params: Promise<{ city: string }> };
+
+export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
+  const { city: citySlug } = await params;
+  const city = getCity(citySlug);
   if (!city) {
     return {
       title: "Service area not found",
@@ -33,8 +36,9 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
   });
 }
 
-export default function CityServiceAreaPage({ params }: { params: { city: string } }) {
-  const city = getCity(params.city);
+export default async function CityServiceAreaPage({ params }: CityPageProps) {
+  const { city: citySlug } = await params;
+  const city = getCity(citySlug);
   if (!city) notFound();
 
   const cityServices = city.serviceCards
@@ -49,7 +53,7 @@ export default function CityServiceAreaPage({ params }: { params: { city: string
       <PageHero
         eyebrow={`Local plumbing · ${city.county}`}
         title={`Plumbing Services in ${city.name}, NE`}
-        description={`Plumbing repairs, drain service, and 24/7 emergency availability for ${city.name} homes and businesses. Call to confirm route timing for your address.`}
+        description={`Available 24/7 for plumbing and drain emergencies near ${city.landmark} and throughout ${city.name}; call to confirm route timing for your address.`}
         breadcrumbs={[{ label: "Service Areas", href: "/service-areas/" }, { label: `${city.name}, NE` }]}
       />
 
@@ -93,7 +97,7 @@ export default function CityServiceAreaPage({ params }: { params: { city: string
         <div className="container-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <p className="eyebrow !text-orange">{city.landmark}</p>
-            <h2 className="mt-3 font-heading text-3xl font-bold leading-tight sm:text-4xl">Serving homes around {city.name}.</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold leading-tight sm:text-4xl">Neighborhoods and areas we serve in {city.name}.</h2>
             <p className="mt-4 leading-7 text-slate-300">{city.coverage}</p>
             <p className="mt-4 text-sm leading-6 text-slate-300">Service is coordinated from {BUSINESS.address.street}, {BUSINESS.address.city}. Call to confirm route availability and timing for your location.</p>
           </div>
@@ -125,7 +129,7 @@ export default function CityServiceAreaPage({ params }: { params: { city: string
         </div>
       </section>
 
-      <CallToAction title={`Need plumbing service in ${city.name}?`} description={`Call to discuss your ${city.name} property, the issue you are seeing, and whether service is available at your address.`} dark />
+      <CallToAction title={`Need a plumber in ${city.name} today?`} description={`Call to discuss your ${city.name} property, the issue you are seeing, and whether service is available at your address.`} dark />
     </>
   );
 }

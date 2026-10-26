@@ -1,21 +1,22 @@
 import Image from "next/image";
-import { Clock3, Droplets, MapPinned, MessageSquareText, ShieldCheck, Wrench } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Clock3, Droplets, MapPinned, MessageSquareText, ShieldCheck, Wrench } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 import { CITIES } from "@/data/cities";
 import { businessSchema } from "@/lib/schema";
 import { buildMetaDescription, pageMetadata } from "@/lib/seo";
 import { CallToAction, JsonLd, PageHero, SectionHeading } from "@/components/page-sections";
-import { CityCard, ValueCard } from "@/components/cards";
+import { ValueCard } from "@/components/cards";
 
 const description = buildMetaDescription("About Tom Carter Drain & Plumbing", "Chadron", "A local plumbing and drain team serving homes and businesses across northwest Nebraska");
 
-export const metadata = pageMetadata({ title: "About Tom Carter Drain & Plumbing", description, path: "/about/" });
+export const metadata = pageMetadata({ title: "About", description, path: "/about/" });
 
 export default function AboutPage() {
   return (
     <>
       <JsonLd data={businessSchema()} />
-      <PageHero eyebrow="About the business" title="Local plumbing and drain service, based in Chadron." description="Tom Carter Drain & Plumbing serves Chadron and northwest Nebraska with residential and commercial plumbing work, drain cleaning, and 24/7 emergency availability." breadcrumbs={[{ label: "About" }]} />
+      <PageHero eyebrow="About the business" title="About Tom Carter Drain & Plumbing" description="Tom Carter Drain & Plumbing serves Chadron and northwest Nebraska with residential and commercial plumbing work, drain cleaning, and 24/7 emergency availability." breadcrumbs={[{ label: "About" }]} />
 
       <section className="section-pad">
         <div className="container-shell grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
@@ -40,21 +41,27 @@ export default function AboutPage() {
         <div className="container-shell">
           <SectionHeading eyebrow="How we work" title="Practical service values for every visit" description="These principles guide how we communicate about plumbing issues and the work a property may need." centered />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <ValueCard icon={MessageSquareText} title="Clear explanations" description="Understand what we observe, which options are available, and what each repair involves." />
-            <ValueCard icon={ShieldCheck} title="Careful work" description="We treat the home or business as an occupied space and keep attention on the affected area." />
-            <ValueCard icon={Clock3} title="Emergency availability" description="Urgent drain and plumbing calls can be made 24 hours a day, 7 days a week." />
-            <ValueCard icon={MapPinned} title="Local coverage" description="Service is arranged from Chadron for the listed northwest Nebraska communities." />
-            <ValueCard icon={Droplets} title="Water-aware advice" description="Mineral deposits, private wells, and fixture conditions are considered where relevant." />
-            <ValueCard icon={Wrench} title="Scope before work" description="We discuss the issue and the next step before proceeding with the agreed repair." />
+            <ValueCard icon={MessageSquareText} title="Honest Communication" description="We explain what we find, which options are available, and what each next step involves." />
+            <ValueCard icon={ShieldCheck} title="Clean Work" description="We take care around the work area and keep attention on the affected part of the home or business." />
+            <ValueCard icon={Clock3} title="Available 24/7" description="Emergency plumbing and drain calls can be made any time, day or night." />
+            <ValueCard icon={MapPinned} title="Local Knowledge" description="Based in Chadron and serving the listed northwest Nebraska communities." />
+            <ValueCard icon={Droplets} title="No Surprise Pricing" description="We discuss the work scope and pricing before the agreed repair begins." />
+            <ValueCard icon={Wrench} title="Respectful Service" description="We treat customers and their homes or businesses with care and consideration." />
           </div>
         </div>
       </section>
 
       <section className="section-pad">
-        <div className="container-shell">
-          <SectionHeading eyebrow="The service region" title="Serving Chadron and communities across northwest Nebraska" description="We serve the towns listed below. Call to confirm route availability and timing for your address, especially for rural properties." />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {CITIES.map((city) => <CityCard city={city} key={city.slug} />)}
+        <div className="container-shell grid items-center gap-10 lg:grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-slate-200 shadow-card">
+            <Image src="/assets/images/chadron-ne.png" alt="Chadron and Pine Ridge landscape representing the local plumbing service region" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
+          </div>
+          <div>
+            <SectionHeading eyebrow="The service region" title="Serving Chadron and 11 other service communities" description="Calls are coordinated from the Chadron home base. Share your town and service address to confirm route availability and timing, especially for rural properties." />
+            <div className="flex flex-wrap gap-2">
+              {CITIES.map((city) => <Link className="area-chip" href={`/service-areas/${city.slug}/`} key={city.slug}>{city.name}, NE</Link>)}
+            </div>
+            <Link className="button-secondary mt-6" href="/service-areas/">Explore all service areas <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

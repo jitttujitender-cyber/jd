@@ -15,13 +15,13 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd data={businessSchema()} />
-      <PageHero eyebrow="Plumbing and drain services" title="Plumbing services for homes and businesses in Chadron, NE." description="Explore drain cleaning, water-heater work, leak detection, fixture repair, repiping, and more. Emergency service is available 24/7 across the northwest Nebraska service region." breadcrumbs={[{ label: "Services" }]} />
+      <PageHero eyebrow="Plumbing and drain services" title="Plumbing Services in Chadron, NE" description="Explore drain cleaning, water-heater work, leak detection, fixture repair, repiping, and more. Emergency service is available 24/7 across the northwest Nebraska service region." breadcrumbs={[{ label: "Services" }]} />
 
       <section className="section-pad">
         <div className="container-shell">
           <SectionHeading eyebrow="Service directory" title="Find the plumbing service that fits the problem" description="Every service starts with the symptoms and the condition of the plumbing at your property. Select a service to see signs, process details, and answers to common questions." />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {SERVICES.map((service) => <ServiceCard service={service} key={service.slug} />)}
+            {SERVICES.map((service) => <ServiceCard expanded service={service} key={service.slug} />)}
           </div>
         </div>
       </section>

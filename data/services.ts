@@ -72,7 +72,7 @@ export const SERVICES: Service[] = [
       { question: "When is replacement preferable to repair?", answer: "Age, tank condition, repair history, parts availability, and the cost of the current fault all matter. An inspection helps compare the options for your specific heater." },
     ],
     related: ["tankless-water-heater-install", "main-line-leak-detection", "whole-home-repiping"],
-    metaFocus: "Restore steady hot water and investigate scale, leaks, or worn components",
+    metaFocus: "Restore hot water for everyday use",
   },
   {
     slug: "tankless-water-heater-install",

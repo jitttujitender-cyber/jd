@@ -4,8 +4,10 @@ import { ArrowRight, Check, MapPin, type LucideIcon } from "lucide-react";
 import type { City } from "@/data/cities";
 import type { Service } from "@/data/services";
 
-export function ServiceCard({ service, description, cityName = "Chadron" }: { service: Service; description?: string; cityName?: string }) {
+export function ServiceCard({ service, description, cityName = "Chadron", expanded = false }: { service: Service; description?: string; cityName?: string; expanded?: boolean }) {
   const imageAlt = `${service.name} service information for ${cityName}, Nebraska`;
+  const secondSentence = service.paragraphs[0]?.match(/[^.!?]+[.!?]/)?.[0].trim();
+  const cardDescription = description ?? (expanded && secondSentence ? `${service.summary} ${secondSentence}` : service.summary);
   return (
     <article className="surface-card group overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-soft">
       <Link href={`/services/${service.slug}/`} className="block" aria-label={`Explore ${service.name} in ${cityName}, Nebraska`}>
@@ -15,7 +17,7 @@ export function ServiceCard({ service, description, cityName = "Chadron" }: { se
       </Link>
       <div className="p-5 sm:p-6">
         <h3 className="font-heading text-lg font-bold text-navy"><Link className="hover:text-blue" href={`/services/${service.slug}/`}>{service.name}</Link></h3>
-        <p className="mt-2 min-h-[3.25rem] text-sm leading-6 text-slate-600">{description ?? service.summary}</p>
+        <p className="mt-2 min-h-[3.25rem] text-sm leading-6 text-slate-600">{cardDescription}</p>
         <Link className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-blue hover:text-orange" href={`/services/${service.slug}/`}>
           Service details <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden="true" />
         </Link>

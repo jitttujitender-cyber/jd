@@ -13,20 +13,23 @@ function trimToWords(value: string, maxLength: number): string {
 
 export function buildMetaDescription(topic: string, city: string, focus: string): string {
   const prefix = `${topic} in ${city}, NE. `;
-  const suffix = ` Local service across northwest Nebraska. Call ${BUSINESS.phone} for 24/7 help.`;
-  const target = 155;
-  const available = target - prefix.length - suffix.length - 1;
-  const filler = "with clear, practical guidance";
-  let center = focus.replace(/[.!?]+$/, "").trim();
+  const regionalLine = " Northwest Nebraska plumbing and drain support.";
+  const callLine = ` Call ${BUSINESS.phone} for 24/7 service.`;
+  const fixedLength = prefix.length + regionalLine.length + callLine.length + 1;
+  const minFocusLength = 150 - fixedLength;
+  const maxFocusLength = 160 - fixedLength;
+  let center = trimToWords(focus.replace(/[.!?]+$/, "").trim(), maxFocusLength)
+    .replace(/[,:;]+$/, "")
+    .replace(/\s+(and|or|with|for|to|of|in|at)$/i, "");
 
-  if (center.length < available) {
-    const padding = ` ${filler}`;
-    while (center.length + padding.length <= available) center += padding;
+  const fillers = ["and clear next steps", "with practical guidance", "for local homes", "with local service"];
+  for (const filler of fillers) {
+    if (center.length >= minFocusLength) break;
+    const candidate = `${center}${center ? " " : ""}${filler}`;
+    if (candidate.length <= maxFocusLength) center = candidate;
   }
-  center = trimToWords(center, available);
-  if (center.length < 16) center = trimToWords(`${center} ${filler}`, available);
 
-  return `${prefix}${center}.${suffix}`;
+  return `${prefix}${center}.${regionalLine}${callLine}`;
 }
 
 export function pageMetadata({

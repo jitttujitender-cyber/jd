@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="container-shell grid items-center gap-10 py-10 sm:py-14 lg:grid-cols-[1.03fr_0.97fr] lg:gap-12 lg:py-16">
           <div className="max-w-2xl">
             <p className="eyebrow">Chadron, Nebraska · Serving the Panhandle</p>
-            <h1 className="mt-4 font-heading text-[2.55rem] font-bold leading-[1.07] tracking-tight text-navy sm:text-5xl lg:text-[3.65rem]">Plumbing &amp; drain help, from a team that knows the area.</h1>
+            <h1 className="mt-4 font-heading text-[2.55rem] font-bold leading-[1.07] tracking-tight text-navy sm:text-5xl lg:text-[3.65rem]">Professional Plumbing Services in Chadron, NE</h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">Tom Carter Drain &amp; Plumbing provides practical plumbing repairs and drain service from our Chadron home base. Emergency service is available 24/7 across northwest Nebraska.</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a className="button-primary" href={BUSINESS.phoneLink}><PhoneCall className="h-4 w-4" aria-hidden="true" /> Call {BUSINESS.phone}</a>
@@ -37,7 +37,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative min-h-[20rem] overflow-hidden rounded-[1.5rem] bg-slate-200 shadow-soft sm:min-h-[27rem]">
-            <Image src={BUSINESS.image} alt="Plumber working on a residential sink repair in Chadron, Nebraska" fill priority sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
+            <Image src={BUSINESS.image} alt="Illustrative plumber working on a residential sink repair; service available in Chadron, Nebraska" fill priority sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
             <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/30 bg-navy/90 p-4 text-white shadow-soft backdrop-blur sm:inset-x-6 sm:bottom-6 sm:p-5">
               <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-orange">Local service, clear next steps</p>
               <p className="mt-1 font-heading text-lg font-bold sm:text-xl">Plumbing and drain care for homes and businesses.</p>
@@ -73,12 +73,31 @@ export default function HomePage() {
             <p className="eyebrow !text-orange">Local plumbing context</p>
             <h2 className="mt-3 max-w-xl font-heading text-3xl font-bold leading-tight sm:text-4xl">Good plumbing advice starts with your water and your home.</h2>
             <p className="mt-4 max-w-xl leading-7 text-slate-300">Chadron water is commonly reported around 12–15 grains per gallon, and some older homes still have galvanized supply piping. A property-level inspection and water test help distinguish mineral scale from a worn component or aging line.</p>
+            <p className="mt-4 max-w-xl leading-7 text-slate-300">High Plains winter cold can put exposed pipes and unheated spaces at risk. Older plumbing and hard water can also affect fixtures and water heaters, so we consider the property and season when discussing a repair.</p>
             <Link className="mt-6 inline-flex items-center gap-2 font-bold text-orange hover:text-orange/80" href="/service-areas/chadron/">Plumbing service in Chadron <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             <StatCard value="24/7" label="Emergency service" detail="Call when an urgent plumbing or drain issue cannot wait." />
             <StatCard value="12" label="Communities" detail="From Chadron through the listed northwest Nebraska service region." />
             <StatCard value="15" label="Service categories" detail="Repairs, drain care, water heaters, and more." />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="container-shell grid items-center gap-10 lg:grid-cols-2">
+          <div className="relative min-h-[20rem] overflow-hidden rounded-[1.5rem] bg-slate-200 shadow-card sm:min-h-[25rem]">
+            <Image src="/assets/images/drain-cleaning.png" alt="Illustrative drain-cleaning equipment for emergency plumbing service in Chadron, Nebraska" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
+          </div>
+          <div>
+            <p className="eyebrow">24/7 emergency service</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-navy sm:text-4xl">Emergency Plumbing &amp; Drain Cleaning</h2>
+            <p className="mt-4 leading-7 text-slate-600">An active leak, backed-up drain, or sudden loss of water can disrupt a home or business. Call any time to explain what is happening and where service is needed.</p>
+            <p className="mt-3 leading-7 text-slate-600">We can discuss the symptoms, access, and next step for your Chadron address or another listed community. For an urgent issue, a phone call is the fastest way to reach the team.</p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a className="button-primary" href={BUSINESS.phoneLink}><PhoneCall className="h-4 w-4" aria-hidden="true" /> Call {BUSINESS.phone}</a>
+              <Link className="button-secondary" href="/services/emergency-drain-cleaning/">Emergency drain service <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+            </div>
           </div>
         </div>
       </section>
@@ -104,7 +123,8 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Based in Chadron</p>
             <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-navy sm:text-4xl">A local service area with real High Plains conditions.</h2>
-            <p className="mt-4 leading-7 text-slate-600">Tom Carter Drain &amp; Plumbing is based at 1013 E Niobrara Ave in Chadron. Homes across the region can have different water sources, pipe materials, and winter exposure, so a clear description of the property helps us plan the right visit.</p>
+            <p className="mt-4 leading-7 text-slate-600">Tom Carter Drain &amp; Plumbing is based at 1013 E Niobrara Ave in Chadron, in Dawes County. Chadron State College, Chadron State Park, and the Mari Sandoz High Plains Heritage Center are familiar landmarks in the local community, while the Niobrara River and Pine Ridge frame the wider area.</p>
+            <p className="mt-3 leading-7 text-slate-600">Homes across this High Plains region can have different water sources, pipe materials, and winter exposure, so a clear description of the property helps us plan the right visit.</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl bg-canvas p-4"><p className="font-heading text-sm font-bold text-navy">Water hardness</p><p className="mt-1 text-sm leading-6 text-slate-600">Reported around 12–15 gpg in Chadron; test at the property to confirm.</p></div>
               <div className="rounded-xl bg-canvas p-4"><p className="font-heading text-sm font-bold text-navy">Seasonal care</p><p className="mt-1 text-sm leading-6 text-slate-600">Protect exposed lines and check unheated spaces before deep winter cold.</p></div>
@@ -128,7 +148,7 @@ export default function HomePage() {
       <section className="section-pad">
         <div className="container-shell">
           <div className="mb-9 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
-            <SectionHeading eyebrow="Service coverage" title="Serving Chadron and 11 nearby communities" description="Call with your address to confirm availability and timing, especially for rural properties or locations farther from Chadron." />
+            <SectionHeading eyebrow="Service coverage" title="Serving Chadron and 11 other service communities" description="Call with your address to confirm availability and timing, especially for rural properties or locations farther from Chadron." />
             <Link className="button-secondary shrink-0" href="/service-areas/">View all service areas <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -158,11 +178,10 @@ export default function HomePage() {
             <ValueCard icon={ClipboardCheck} title="Keep the scope clear" description="You can ask questions about access, options, and service details while the work is being planned." />
             <ValueCard icon={CalendarClock} title="Be reachable when urgent" description="Emergency plumbing and drain calls are available around the clock at the Chadron service number." />
           </div>
-          <p className="mt-5 text-center text-xs text-slate-500">We do not publish customer reviews on this site without verified review content.</p>
         </div>
       </section>
 
-      <CallToAction title="A plumbing problem cannot always wait." description="Call any time to discuss an urgent drain or plumbing issue in Chadron and the surrounding service region." dark />
+      <CallToAction title="Need a Chadron plumber today?" description="Call any time to discuss an urgent drain or plumbing issue in Chadron and the surrounding service region." dark />
     </>
   );
 }

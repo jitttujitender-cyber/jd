@@ -1,8 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   trailingSlash: true,
   images: { unoptimized: true },
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.chadrondrainhero.com" }],
+        destination: "https://chadrondrainhero.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

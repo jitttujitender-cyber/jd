@@ -23,6 +23,7 @@ export function businessSchema() {
       longitude: BUSINESS.coordinates.longitude,
     },
     openingHours: "Mo-Su 00:00-23:59",
+    priceRange: "$$",
     image: `${SITE_URL}${BUSINESS.image}`,
     description: BUSINESS.description,
     areaServed: CITIES.map((city) => ({ "@type": "City", name: city.name })),
