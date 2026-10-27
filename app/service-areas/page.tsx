@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { ArrowRight, MapPinned, PhoneCall } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 import { CITIES, MAIN_CITIES } from "@/data/cities";

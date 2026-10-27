@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { ArrowUpRight, Droplet, Menu, PhoneCall, Wrench } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 

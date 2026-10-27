@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { Clock3, MapPin, MapPinned, PhoneCall } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { JsonLd, MapEmbed, PageHero } from "@/components/page-sections";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { businessSchema } from "@/lib/schema";
 import { buildMetaDescription, pageMetadata } from "@/lib/seo";
 import { BUSINESS } from "@/data/business";

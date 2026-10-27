@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { ArrowRight, Clock3, Droplets, MapPinned, MessageSquareText, ShieldCheck, Wrench } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 import { CITIES } from "@/data/cities";

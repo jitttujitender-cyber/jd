@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { ArrowRight, CalendarClock, ClipboardCheck, Droplets, MapPinned, PhoneCall, SearchCheck, Wrench } from "lucide-react";
 import { businessSchema } from "@/lib/schema";
 import { buildMetaDescription, pageMetadata } from "@/lib/seo";

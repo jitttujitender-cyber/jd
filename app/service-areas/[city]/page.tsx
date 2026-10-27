@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Droplets, Home, PhoneCall, Snowflake } from "lucide-react";
 import { CityCard, ServiceCard, ValueCard } from "@/components/cards";

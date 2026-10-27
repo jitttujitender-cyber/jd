@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/site-link";
 import { ArrowRight, Check, MapPin, type LucideIcon } from "lucide-react";
 import type { City } from "@/data/cities";
 import type { Service } from "@/data/services";
