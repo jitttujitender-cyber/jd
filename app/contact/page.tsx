@@ -1,6 +1,5 @@
 import { SiteLink as Link } from "@/components/site-link";
 import { Clock3, MapPin, MapPinned, PhoneCall } from "lucide-react";
-import { ContactForm } from "@/components/contact-form";
 import { JsonLd, MapEmbed, PageHero } from "@/components/page-sections";
 import { BUSINESS } from "@/data/business";
 import { CITIES } from "@/data/cities";
@@ -15,11 +14,20 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={businessSchema()} />
-      <PageHero eyebrow="Contact" title="Contact Tom Carter Drain & Plumbing" description="Call any time for urgent plumbing or drain help. The front-end form is not connected to send submissions, so call to reach the team about a service request." breadcrumbs={[{ label: "Contact" }]} />
+      <PageHero eyebrow="Contact" title="Contact Tom Carter Drain & Plumbing" description="Contact us about plumbing and drain service availability in Chadron and nearby northwest Nebraska communities." breadcrumbs={[{ label: "Contact" }]} />
 
       <section className="section-pad">
         <div className="container-shell grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="order-1 lg:order-2"><ContactForm /></div>
+          <div className="order-1 lg:order-2 surface-card p-4 sm:p-6">
+            <h2 className="font-heading text-2xl font-bold text-navy">Request plumbing service</h2>
+            <p className="mt-2 mb-5 text-sm leading-6 text-slate-600">Complete the request form below. For urgent service, call the number shown on this website.</p>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/1yULj3D0uCJV5p30yZwg?site_id=chadrondrainhero.com&offer_id=OFR6b01c36a88f041039c6a4083a80362e2"
+              title="Lead Smart consumer request form"
+              style={{ display: "block", width: "100%", height: "1050px", border: 0 }}
+              loading="lazy"
+            />
+          </div>
           <div className="order-2 space-y-5 lg:order-1">
             <div className="surface-card p-5 sm:p-7">
               <h2 className="font-heading text-xl font-bold text-navy">Tom Carter Drain &amp; Plumbing</h2>
